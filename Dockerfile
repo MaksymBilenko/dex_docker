@@ -8,8 +8,6 @@ RUN cd /go/src/github.com/coreos/dex && make release-binary
 
 FROM alpine:latest
 
-RUN mkdir -p /dex/bin
-
 COPY --from=builder /go/bin/dex /usr/bin/dex
 COPY --from=builder /go/src/github.com/coreos/dex/web /web
 
